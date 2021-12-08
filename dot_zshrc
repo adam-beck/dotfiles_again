@@ -22,7 +22,7 @@ eval "$(dircolors ~/.dircolors)";
 
 fpath=(~/.zsh $fpath)
 
-. $HOME/.asdf/asdf.sh
+[[ -s "$HOME/.asdf/asdf.sh" ]] && . $HOME/.asdf/asdf.sh
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -35,15 +35,12 @@ source ~/.zplug/init.zsh
 
 zplug "urbainvaes/fzf-marks"
 zplug "wfxr/forgit"
-# zplug "marlonrichert/zsh-autocomplete"
 
 zplug load
 
 # fnm
 export PATH=/home/adam/.fnm:$PATH
-eval "`fnm env"
+eval "$(fnm env)"
 
 export PATH="/home/adam/git-fuzzy/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
-
-eval "$(pyenv init -)"

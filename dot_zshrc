@@ -1,18 +1,17 @@
+setopt EXTENDED_GLOB
+
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.bash_aliases"
 source "$HOME/.helper_functions"
 source "$HOME/.profile"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export EDITOR="code"
-export VISUAL="$EDITOR"
 export GIT_EDITOR="vim"
 export XDG_CONFIG_HOME="/home/adam/.config"
 export LESS="-R -F -X"
-export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+export FZF_DEFAULT_COMMAND='rg --hidden -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 _fzf_compgen_path() {
@@ -21,7 +20,6 @@ _fzf_compgen_path() {
 
 eval "$(dircolors ~/.dircolors)";
 
-fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 fpath=(~/.zsh $fpath)
 
 . $HOME/.asdf/asdf.sh
@@ -31,10 +29,7 @@ fpath=(${ASDF_DIR}/completions $fpath)
 
 autoload -U add-zsh-hook compinit
 
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
-setopt EXTENDED_GLOB
 
 source ~/.zplug/init.zsh
 
@@ -48,9 +43,6 @@ zplug load
 export PATH=/home/adam/.fnm:$PATH
 eval "`fnm env --multi`"
 
-# deno
-export DENO_INSTALL="/home/adam/.deno"
-export PATH=$DENO_INSTALL/bin:$PATH
 export PATH="/home/adam/git-fuzzy/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
 

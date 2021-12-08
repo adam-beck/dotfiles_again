@@ -18,7 +18,9 @@ _fzf_compgen_path() {
   ag -g "" "$1"
 }
 
-eval "$(dircolors ~/.dircolors)";
+if type "dircolors" > /dev/null; then
+  eval "$(dircolors ~/.dircolors)";
+fi
 
 fpath=(~/.zsh $fpath)
 

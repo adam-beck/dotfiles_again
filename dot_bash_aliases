@@ -1,0 +1,35 @@
+#!/bin/bash
+alias xclip='xclip -selection clipboard'
+
+# alias tmux='tmux -2'
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias hostip="ifconfig wlan0 | grep inet | grep -v inet6 | awk '{ print \$2 }' | sed s/addr\://"
+
+alias gs='git status'
+alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias glog='git log'
+alias gd='git diff'
+alias gpr='git pull --rebase'
+
+unalias rm 2>/dev/null
+
+alias fix="git diff --name-only | uniq | xargs $EDITOR"
+
+# alias ls='lsd'
+# alias ll='ls -alF'
+# alias la='ls -A'
+# alias l='ls -CF'
+# alias ll='ls -alF'
+# alias la='ls -A'
+# alias l='ls -CF'
+
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+alias fd='fdfind'
+alias docker-compose='docker compose'

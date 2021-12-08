@@ -41,7 +41,7 @@ zplug load
 
 # fnm
 export PATH=/home/adam/.fnm:$PATH
-eval "`fnm env --multi`"
+eval "`fnm env"
 
 export PATH="/home/adam/git-fuzzy/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"

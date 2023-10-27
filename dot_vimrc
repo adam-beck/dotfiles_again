@@ -2,8 +2,6 @@ set nocompatible
 set backspace=2
 set runtimepath+=~/.vim/my-snippets/
 filetype off
-" set t_Co=256
-" let g:airline#extensions#tmuxline#enabled = 0
 
 call plug#begin('~/.vim/plugged')
 
@@ -13,7 +11,6 @@ Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
 " Information panels
 Plug 'bling/vim-airline'
-Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -78,12 +75,8 @@ set termguicolors
 let g:indentLine_setConceal = 0
 
 syntax on
-" color gruvbox
 color lucius
 autocmd ColorScheme * highlight Comment cterm=italic
-
-" set t_ZH=[3m
-" set t_ZR=[23m
 
 let mapleader=","
 inoremap jk <ESC>
